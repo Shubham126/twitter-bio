@@ -1,26 +1,37 @@
 export default function Header() {
   return (
-    <header className="flex justify-between items-center w-full mt-5 border-b-2 pb-7 sm:px-4 px-2">
-      <a href="/" className="flex space-x-3">
-        <img
-          alt="header text"
-          src="/assets/write.svg"
-          className="sm:w-9 sm:h-9 w-8 h-8"
-        />
-        <h1 className="sm:text-3xl text-2xl font-bold ml-2 tracking-tight">
-          twitterbio.io
-        </h1>
+    <header className="flex justify-between items-center w-full mt-5 border-b pb-7 sm:px-4 px-2">
+      <a href="/" className="flex items-center space-x-2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4C21 3.44772 20.5523 3 20 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 7H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 11H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M7 15H13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+        <div className="flex flex-col">
+          <h1 className="sm:text-2xl text-xl font-bold tracking-tight">
+            YourTwitterBio
+          </h1>
+          <p className="text-xs text-gray-500">powered by max</p>
+        </div>
       </a>
+      
+      <img 
+        src="/assets/max.jpg" 
+        alt="Max" 
+        className="w-30 object-cover"
+      />
+      
       <a
-        className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-4 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-gray-100"
+        className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-sm transition-colors hover:bg-gray-50"
         href="https://github.com/Nutlope/twitterbio"
         target="_blank"
         rel="noopener noreferrer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="16"
+          height="16"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
