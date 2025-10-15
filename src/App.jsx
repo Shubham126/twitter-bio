@@ -37,7 +37,7 @@ export default function App() {
     try {
       const result = await generateBio(prompt);
       setGeneratedBios(result);
-      setCount(count + 1);
+      setCount(count + 1)
       scrollToBios();
     } catch (err) {
       toast.error("Failed to generate bio");
