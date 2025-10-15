@@ -9,6 +9,7 @@ import AnimatedHeading from "./components/AnimatedHeading";
 import "./index.css";
 
 export default function App() {
+  const [count, setCount] = useState(126657);
   const [loading, setLoading] = useState(false);
   const [bio, setBio] = useState("");
   const [vibe, setVibe] = useState("Professional");
@@ -36,6 +37,7 @@ export default function App() {
     try {
       const result = await generateBio(prompt);
       setGeneratedBios(result);
+      setCount(count + 1);
       scrollToBios();
     } catch (err) {
       toast.error("Failed to generate bio");
@@ -48,7 +50,7 @@ export default function App() {
       <Header />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
         <p className="border border-gray-700 rounded-2xl py-1 px-4 text-gray-300 text-sm mb-5 hover:scale-105 transition duration-300 ease-in-out hover:border-purple-600 hover:shadow-[0_4px_15px_rgba(128,0,128,0.3)]">
-          <b>126,657</b> bios generated so far
+          <b>{count}</b> bios generated so far
         </p>
         <AnimatedHeading />
         {/* <div className="flex items-center space-x-3 mb-10">

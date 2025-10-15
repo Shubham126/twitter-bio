@@ -3,6 +3,22 @@ import { useEffect, useState } from "react";
 const platforms = ["Twitter", "Instagram", "Facebook"];
 const golden = "#FFD700";
 
+const HoverWord = ({ children, className = "" }) => (
+  <span className={`inline-block transition-colors duration-300 hover:text-violet-700 ${className}`}>
+    {children}
+  </span>
+);
+
+const renderHoverableText = (text, className = "") => {
+  return text.split(' ').map((word, index) => (
+    <span key={index}>
+      <HoverWord className={className}>{word}</HoverWord>
+      {index < text.split(' ').length - 1 && ' '}
+    </span>
+  ));
+};
+
+
 export default function AnimatedHeading() {
   const [currentPlatform, setCurrentPlatform] = useState(platforms[0]);
   const [displayText, setDisplayText] = useState("");
@@ -43,14 +59,14 @@ export default function AnimatedHeading() {
   return (
     <div className="mb-10 transition-all duration-300 hover:brightness-150 cursor-pointer">
       <div className="sm:text-6xl text-4xl max-w-[708px] font-bold text-white text-center">
-        <span>Generate your next</span>
+        {renderHoverableText("Generate your next", "text-white")}
       </div>
       <div className="sm:text-6xl text-4xl max-w-[708px] font-bold text-center">
-        <span style={{ color: golden }}>{displayText}</span>
-        <span className="text-white"> bio</span>
+        <span style={{ color: golden }}>{displayText} </ span>
+        {renderHoverableText("bio", "text-white")}
       </div>
       <div className="sm:text-6xl text-4xl max-w-[708px] font-bold text-white text-center">
-        <span>using AI</span>
+        {renderHoverableText("using AI", "text-white")}
       </div>
     </div>
   );

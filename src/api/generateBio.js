@@ -1,7 +1,7 @@
 export async function generateBio(prompt) {
   const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
-  const siteUrl = "https://www.twitterbio.io/"; // Change to your site URL
-  const siteName = "twitterbio.io"; // Change to your site name
+  // const siteUrl = "https://www.twitterbio.io/"; // Change to your site URL
+  // const siteName = "twitterbio.io"; // Change to your site name
 
   const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
